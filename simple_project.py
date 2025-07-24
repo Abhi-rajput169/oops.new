@@ -1,9 +1,27 @@
 class smallapp:
+
+    __id=1#static variable 
     def __init__(self):
+        self.__name='abhi'
+        self.id=smallapp.__id
+        smallapp.__id += 1
         self.username=""
         self.password=""
         self.loggedin=False
-        self.menu()
+
+    @staticmethod  
+    def get_id():
+        return smallapp.__id
+    @staticmethod
+    def set_id(value):
+        smallapp.__id=value
+
+    def get_name(self):
+        return self.__name
+    
+    def set_name(self,name):
+        self.__name=name
+
 
     def menu(self):
         user_input=input("""How are YOU!!
@@ -63,5 +81,3 @@ class smallapp:
 
         self.menu()
         
-
-abhi=smallapp()
